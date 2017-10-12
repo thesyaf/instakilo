@@ -1,6 +1,31 @@
-<div>
-  <% if photo.image_data? %>
-    <%= image_tag photo.image_url %>
+
+<div class="feed">
+  <% @photos.reverse.each do |photo| %>
+
+    <div class="card mx-auto col-12 col-sm-7">
+      <div class="header">
+        <div class="card_user d-flex justify-content-start">
+          <!-- put user image here -->
+          <p><%= photo.user.username %></p>
+
+            <div class="dropdown-toggle ml-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag("icon_options.png") %>
+            </div>
+            <div class="dropdown-menu">
+              <%= link_to 'Edit', edit_photo_path(photo.id), class: "dropdown-item" %>
+              <a class="dropdown-item" href="#">Delete</a>
+            </div>
+        </div>
+
+      </div>
+      <img class="card-img-top feed_photo" src="<%= photo.image_url %>">
+      <div class="card-body">
+        <%= image_tag("heart_unliked.png") %>
+
+        <p class="card-text"><span class="caption_user"><%= photo.user.username %></span> <%= photo.caption %></p>
+
+
+      </div>
+    </div>
   <% end %>
-  <p><%= photo.title %> | <%= link_to 'Edit', edit_photo_path(photo) %></p>
 </div>

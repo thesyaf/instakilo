@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+   margin-left: 0;
+   margin-right: 0;
+ }
+ .nav {
+   height: 52px;
+   background: #FFF;
+   padding-top: 7px;
+ }
+
+ .menu-icon {
+   height: 24px;
+ }
+
+ .logo_title {
+   font-family: 'Grand Hotel', cursive;
+   font-size: 4rem;
+   text-align: center;
+ }
+
+ .login_box {
+   margin: 0 40px 0 40px;
+
+ }
+
+ .login_fields {
+   width: 100%;
+   display: block;
+   margin-top: 3px;
+   margin-bottom: 3px;
+   padding: 3px;
+   border: 1px solid #E6E6E6;
+   border-radius: 3px;
+ }
+
+.login_fields::placeholder {
+  color: #E6E6E6;
+
+}
+
+ .login_button {
+   text-align: center;
+   background-color: #3897F0;
+   border-radius: 3px;
+   height: 28px;
+   width: 100%;
+   color: white;
+   border: none;
+   display: block;
+ }
+
+
+
+ // card styling
+ .card {
+   padding-left: 0;
+   padding: 0;
+   border: none;
+ }
+
+ .dropdown-toggle::after {
+   display: none;
+ }
+
+ .feed_photo {
+   height: 450px;
+   object-fit: cover;
+ }
+
+ .card-body {
+   padding-left: 10px;
+   padding-top: 10px;
+ }
+
+ .header {
+   height: 60px;
+   padding-top: 20px;
+   padding-left: 10px;
+   background-color: #fafafa;
+ }
+
+ .row {
+   margin: 0;
+ }
+
+ .card-img-top {
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+
+ }
+
+ .like {
+   height: 24px;
+ }
+
+ .caption_user {
+   font-weight: bold;
+ }

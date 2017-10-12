@@ -1,20 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div class="nav"></div>
 
-<p>
-  <strong>Image:</strong><br>
-  <img src="<%= @photo.image_url %>">
-
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @photo.user.username %>
-</p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @photo.caption %>
-</p>
+<%= render "photo" %>
 
 
 

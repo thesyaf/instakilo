@@ -1,0 +1,32 @@
+
+<% if user_signed_in? %>
+
+      <ul class="nav fixed-top justify-content-center">
+        <li class="nav-item">
+          <%= link_to image_tag("menu_icon_home.png", class: "menu-icon"), photos_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to image_tag("menu_icon_search.png", class: "menu-icon"), photos_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to image_tag("menu_icon_new.png", class: "menu-icon"), new_photo_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to(image_tag("menu_icon_heart.png", class: "menu-icon"), edit_user_registration_path, class: "nav-link") %>
+        </li>
+
+        <li class="nav-item logout">
+          <%= link_to(image_tag("menu_icon_profile.png", class: "menu-icon"), destroy_user_session_path, method: :delete, class: "nav-link") %>
+        </li>
+      </ul>
+
+<% else %>
+
+    <li>
+      <%= link_to("Login", new_user_session_path)  %>
+    </li>
+    
+<% end %>

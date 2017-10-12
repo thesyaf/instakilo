@@ -11,28 +11,7 @@
     </div>
   <% end %>
 
-  <div class="card mx-auto col-12 col-sm-7">
-    <div class="header">
-      <div class="card_user d-flex justify-content-start">
 
-          <div class="dropdown-toggle ml-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag("icon_options.png") %>
-          </div>
-          <div class="dropdown-menu">
-            <%= link_to 'Edit', edit_photo_path(photo.id), class: "dropdown-item" %>
-            <a class="dropdown-item" href="#">Delete</a>
-          </div>
-      </div>
-
-    </div>
-    <img class="card-img-top feed_photo" src="<%= photo.image_url %>">
-    <div class="card-body">
-
-      <p class="card-text"><span class="caption_user"><%= photo.user.username %></span> <%= photo.caption %></p>
-
-
-    </div>
-  </div>
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, id: :photo_image_data %>

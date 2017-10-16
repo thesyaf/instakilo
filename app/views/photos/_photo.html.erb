@@ -6,7 +6,15 @@
       <div class="header">
         <div class="card_user d-flex justify-content-start">
           <!-- put user image here -->
-          <p><%= photo.user.username %></p>
+
+          <% if photo.user.profile %>
+            <%= image_tag photo.user.profile.avatar_url, :class => 'card_avatar' %>
+            <p class="card_username"><%= photo.user.profile.username %></p>
+          <% else %>
+            <p>WARNI</p>
+          <% end %>
+
+
 
             <div class="dropdown-toggle ml-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag("icon_options.png") %>

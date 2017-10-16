@@ -1,0 +1,14 @@
+<div class="nav"></div>
+
+
+<h1>Profiles#show</h1>
+<p>Find me in app/views/profiles/show.html.erb</p>
+
+
+<ul>
+  <li><strong>Username: </strong><%= @profile.username %></li>
+  <li><strong>First Name: </strong><%= @profile.first_name %></li>
+  <li><strong>Last Name: </strong><%= @profile.last_name %></li>
+  <li><strong>Avatar: </strong><%= image_tag @profile.avatar_url, :class => 'feed_photo' %></li>
+  <li><strong>Bio: </strong><%= @profile.bio %></li>
+</ul>

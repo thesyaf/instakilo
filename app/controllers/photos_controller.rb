@@ -1,11 +1,15 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_photo, only: [ :show, :edit, :update, :destroy]
 
 
   # GET /photos
   # GET /photos.json
   def index
     @photos = Photo.all
+    @profile = Profile.all
+
+    # @user = @photo.user.username
+    # @profile = @user.profile.username
   end
 
   # GET /photos/1
@@ -67,6 +71,8 @@ class PhotosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
       @photo = Photo.find(params[:id])
+      # @profile = Profile.find(params[:username])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

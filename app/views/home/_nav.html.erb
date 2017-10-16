@@ -7,7 +7,7 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to image_tag("menu_icon_search.png", class: "menu-icon"), photos_path, class: "nav-link" %>
+          <%= link_to image_tag("menu_icon_search.png", class: "menu-icon"), destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
 
         <li class="nav-item">
@@ -19,7 +19,7 @@
         </li>
 
         <li class="nav-item logout">
-          <%= link_to(image_tag("menu_icon_profile.png", class: "menu-icon"), destroy_user_session_path, method: :delete, class: "nav-link") %>
+          <%= link_to(image_tag("menu_icon_profile.png", class: "menu-icon"), profile_path, class: "nav-link") %>
         </li>
       </ul>
 

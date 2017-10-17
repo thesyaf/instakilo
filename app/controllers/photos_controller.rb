@@ -8,8 +8,6 @@ class PhotosController < ApplicationController
     @photos = Photo.all
     @profile = Profile.all
 
-    # @user = @photo.user.username
-    # @profile = @user.profile.username
   end
 
   # GET /photos/1

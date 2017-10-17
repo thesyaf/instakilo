@@ -8,3 +8,44 @@
   border-radius: 50%;
   margin-top: -15px;
 }
+
+.profile_avatar {
+  height: 100px;
+  widows: 100px;
+  border-radius: 50%;
+}
+
+.profile_box {
+  margin-top: 70px;
+}
+
+.profile_username {
+  font-size: 1.5em;
+}
+
+.profile_name {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.user_photo_feed {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.grid {
+  padding: 0;
+  margin: 0;
+}
+
+.feed_grid {
+  width: 100%;
+  object-fit: cover;
+}

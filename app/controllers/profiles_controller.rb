@@ -1,14 +1,11 @@
 class ProfilesController < ApplicationController
-
+before_action :set_profile, only: [:show, :update, :destroy]
 
   def index
 
   end
 
   def show
-    # @profile = current_user.profile
-    @profile = Profile.find_by(user: current_user.id)
-
 
     redirect_to edit_profile_url if @profile.nil?
 
@@ -55,6 +52,15 @@ class ProfilesController < ApplicationController
 
 
   private
+
+  def set_profile
+    if params[:id]
+      @profile = Profile.find(params[:id])
+    else
+      @profile = Profile.find_by(user: current_user)
+    end
+  end
+
   def profile_params
     params.require(:profile).permit(
       :avatar,

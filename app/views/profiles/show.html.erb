@@ -1,14 +1,42 @@
-<div class="nav"></div>
+
+<div class="container profile_box">
+  <div class="row">
+    <div class= "col-5">
+      <%= image_tag @profile.avatar_url, :class => 'profile_avatar' %>
+      <p class="profile_name"><%= @profile.first_name + " " + @profile.last_name %></p>
+
+    </div>
+
+    <div class="col-7">
+      <p class="profile_username"><%= @profile.username %></p>
+
+        <% if @profile.user == current_user %>
+            <%= link_to 'Edit Profile', edit_profile_path, class: "btn btn-outline-dark" %>
+        <% else %>
+        <%= link_to 'Follow', edit_profile_path, class: "btn btn-outline-dark" %>
+
+        <% end %>
+    </div>
 
 
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+    <div class="col-12">
+      <p class="profile_bio"><%= @profile.bio %></p>
+    </div>
+
+  </div>
+</div>
 
 
-<ul>
-  <li><strong>Username: </strong><%= @profile.username %></li>
-  <li><strong>First Name: </strong><%= @profile.first_name %></li>
-  <li><strong>Last Name: </strong><%= @profile.last_name %></li>
-  <li><strong>Avatar: </strong><%= image_tag @profile.avatar_url, :class => 'feed_photo' %></li>
-  <li><strong>Bio: </strong><%= @profile.bio %></li>
-</ul>
+<div class="container user_photo_feed">
+    <div class="row justify-content-start">
+      <% @profile.user.photos.reverse.each do |photo| %>
+
+      <div class="grid col-4 col-sm-7">
+
+        <img class="card-img-top feed_grid" src="<%= photo.image_url %>">
+
+      </div>
+      <% end %>
+    </div>
+
+</div>

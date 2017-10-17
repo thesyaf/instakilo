@@ -8,10 +8,13 @@
           <!-- put user image here -->
 
           <% if photo.user.profile %>
-            <%= image_tag photo.user.profile.avatar_url, :class => 'card_avatar' %>
-            <p class="card_username"><%= photo.user.profile.username %></p>
+
+            <%= link_to (image_tag (photo.user.profile.avatar_url), :class => 'card_avatar'), user_path(photo.user.profile.id) %>
+
+            <%= link_to photo.user.profile.username, user_path(photo.user.profile.id), :class => 'card_username' %>
+
           <% else %>
-            <p>WARNI</p>
+            <p>USER_HAS_NO_PROFILE</p>
           <% end %>
 
 

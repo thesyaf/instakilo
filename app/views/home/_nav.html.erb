@@ -7,7 +7,7 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to image_tag("menu_icon_search.png", class: "menu-icon"), destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= image_tag "menu_icon_search.png", class: "menu-icon searchtag", data: {toggle: "modal", target: "#exampleModal"} %>
         </li>
 
         <li class="nav-item">
@@ -15,12 +15,27 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to(image_tag("menu_icon_heart.png", class: "menu-icon"), edit_user_registration_path, class: "nav-link") %>
+          <%= link_to(image_tag("menu_icon_heart.png", class: "menu-icon"), destroy_user_session_path, method: :delete, class: "nav-link") %>
         </li>
 
         <li class="nav-item logout">
           <%= link_to(image_tag("menu_icon_profile.png", class: "menu-icon"), profile_path, class: "nav-link") %>
         </li>
       </ul>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <%= form_tag(@search_path, :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+                <%= submit_tag "Search", :name => nil %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <% end %>

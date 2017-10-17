@@ -4,8 +4,15 @@
   <div class="header">
     <div class="card_user d-flex justify-content-start">
       <!-- put user image here -->
-      <p><%= @photo.user.username %></p>
-      <p><%= @photo.user.profile.username %></p>
+      <% if @photo.user.profile %>
+
+        <%= link_to (image_tag (@photo.user.profile.avatar_url), :class => 'card_avatar'), user_path(@photo.user.profile.id) %>
+
+        <%= link_to @photo.user.profile.username, user_path(@photo.user.profile.id), :class => 'card_username' %>
+
+      <% else %>
+        <p>USER_HAS_NO_PROFILE</p>
+      <% end %>
 
 
         <div class="dropdown-toggle ml-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

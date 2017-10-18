@@ -31,7 +31,9 @@
       </div>
       <img class="card-img-top feed_photo" src="<%= photo.image_url %>">
       <div class="card-body">
-        <%= image_tag("heart_unliked.png") %>
+        <%= div_for photo do %>
+           <%= render partial: "likes/button", locals: { photo: photo } %>
+        <% end %>
 
         <p class="card-text"><span class="caption_user"><%= photo.user.username %></span> <%= photo.caption %></p>
 

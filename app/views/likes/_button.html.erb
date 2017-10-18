@@ -1,0 +1,5 @@
+<% if current_user.like?(photo) %>
+  <%= link_to image_tag("heart_liked.png", class: "heart"), unlike_path(photo_id: photo.id), remote: true, method: :delete %>
+<% else %>
+  <%= link_to image_tag("heart_unliked.png", class: "heart"), like_path(photo_id: photo.id), remote: true, method: :post %>
+<% end %>

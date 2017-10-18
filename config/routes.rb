@@ -8,5 +8,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index], controller: :profiles
   resource :profile
+
+
+  match 'like', to: 'likes#like', via: :post
+
+  match 'unlike', to: 'likes#unlike', via: :delete
+
+  resources :likes
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

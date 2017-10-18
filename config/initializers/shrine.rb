@@ -1,10 +1,13 @@
-require "shrine"
-require "shrine/storage/file_system"
+require "cloudinary"
+require "shrine/storage/cloudinary"
 
-Shrine.plugin :activerecord
-Shrine.plugin :logging, logger: Rails.logger
+Cloudinary.config(
+  cloud_name: "thesyaf",
+  api_key:    "162549568584877",
+  api_secret: "POyDkJF3BETHDRwXY15IMoYXdI8",
+)
 
 Shrine.storages = {
-  cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"),
-  store: Shrine::Storage::FileSystem.new("public", prefix: "uploads/store"),
+  cache: Shrine::Storage::Cloudinary.new(prefix: "cache"), # for direct uploads
+  store: Shrine::Storage::Cloudinary.new(prefix: "store"),
 }
